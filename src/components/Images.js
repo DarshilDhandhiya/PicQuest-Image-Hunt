@@ -1,22 +1,17 @@
-import { ImageContext } from "../App";
+import { useContext } from "react"
+import { ImageContext } from "../App"
+import Image from "./Image";
+import Skeleton from "./Skeleton";
 
 const Images = () => {
-    const { response, isLoading } = useContext(ImageContext);
+  const { response, isLoading, searchImage } = useContext(ImageContext);
+
   return (
     <>
-        <h1 className="text-center mt-6 underline text-2xl">React For Cats</h1>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 my-10">
-            <h1>Image 1</h1>
-            <h1>Image 2</h1>
-            <h1>Image 3</h1>
-            <h1>Image 4</h1>
-            <h1>Image 5</h1>
-            <h1>Image 6</h1>
-            <h1>Image 7</h1>
-            <h1>Image 8</h1>
-            <h1>Image 9</h1>
-            <h1>Image 10</h1>
-        </div>
+      <h1 className="text-center mt-6 underline text-2xl">Results for {searchImage || 'Cats'}</h1>
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 my-10 max-w-7xl mx-auto px-4">
+        {isLoading ? <Skeleton item={10} /> : response.map((data, key) => <Image key={key} data={data} />)}
+      </div>
     </>
   )
 }
