@@ -1,4 +1,3 @@
-
 const Skeleton = ({ item }) => {
     return [...Array(item).keys()].map(() => (
       <div className="animate-pulse">
