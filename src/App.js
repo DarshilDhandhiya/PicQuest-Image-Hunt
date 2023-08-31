@@ -1,8 +1,16 @@
+import Images from './components/Images'; // Adjust the path according to your project structure
+import Jumbutron from "./components/Jumbutron";
+import SearchField from "./components/SearchField";
+
+
 function App() {
   return (
-    <div>
-      <h1>Hello</h1>
-    </div>
+    <>
+      <Jumbutron>
+        <SearchField></SearchField>
+      </Jumbutron>
+      <Images/>
+    </>
   );
 }
 
