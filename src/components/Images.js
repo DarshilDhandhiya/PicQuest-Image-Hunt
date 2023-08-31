@@ -1,4 +1,7 @@
+import { ImageContext } from "../App";
+
 const Images = () => {
+    const { response, isLoading } = useContext(ImageContext);
   return (
     <>
         <h1 className="text-center mt-6 underline text-2xl">React For Cats</h1>
