@@ -3,6 +3,7 @@ import Images from "./components/Images";
 import Jumbutron from "./components/Jumbutron";
 import SearchField from "./components/SearchField";
 import useAxios from "./hooks/useAxios";
+import LDMode from "./components/LDMode"
 
 // Create Context
 export const ImageContext = createContext();
@@ -21,12 +22,16 @@ function App() {
   }
 
   return (
+    <>
+    
     <ImageContext.Provider value={value}>
       <Jumbutron>
         <SearchField />
       </Jumbutron>
+      <LDMode/>
       <Images />
     </ImageContext.Provider>
+    </>
   );
 }
 
